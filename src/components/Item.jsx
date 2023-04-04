@@ -1,17 +1,20 @@
-import Header from './Header'
+import { useState } from 'react'
 
 function Item() {
+
+    const [post, setPost] = useState(JSON.parse(localStorage.getItem("post")));
+    
     return (
-        <div>
-            <Header />
+        <>
             {/* img */}
-            <div className="p-2 text-white">
-                <h3>Details Page For Post with ID: {}</h3>
-                <img className="mb-2 rounded-2xl" src={} alt="" />
-                <h3>User ID: {}</h3>
-                <h2>Title: {}</h2>
-                <p>Body: {}</p>
+            <div className="p-4 text-white">
+                <h3>Details Page for Post with ID:{post.id}</h3>
+                <img className="mb-2 rounded-2xl" src={`https://picsum.photos/300?random=${post.id}`} alt="" />
+                <h3>User ID: {post.id}</h3>
+                <h2>Title: {post.title}</h2>
+                <p>Body: {post.body}</p>
             </div>
-        </div>
+        </>
     )
 }
+export default Item;

@@ -7,7 +7,6 @@ import Header from './components/Header'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <Header />
     <App />
   </BrowserRouter>,
 )
