@@ -20,7 +20,7 @@ function App() {
             <ul className="flex flex-wrap justify-center gap-2 pt-5">
                 {posts.map(post => (
                     <li key={post.id}>
-                        <Link to={`/item`} onClick={() => handleClick(post)}>
+                        <Link to={`/item/${post.id}`} onClick={() => handleClick(post)}>
                             <div className="p-2 text-white border rounded-2xl max-w-[300px]">
                                 <img className="mb-2 rounded-2xl" src={`https://picsum.photos/300?random=${post.id}`} alt="" />
                                 <h3>User ID: {post.userId}</h3>
